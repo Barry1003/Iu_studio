@@ -26,7 +26,7 @@ const Main = () => {
     <div className='w-full h-[550px] text-white '>
       <div className="w-full h-full relative">
         <div className="absolute w-full h-[550px] bg-gradient-to-r from-black"></div>
-        <img src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt={movie?.title} className="w-full h-full object-fit" />
+        <img src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt={movie?.title} className="w-full h-full object-cover" />
         <div className="absolute w-full top-[35%] p-4 md:p-8  h-full">
           <h1 className="text-3xl md:text-5xl font-bold">{movie?.title}</h1>
           <div className="my-4">
