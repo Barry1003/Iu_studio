@@ -25,13 +25,31 @@ const Movie = ({item}) => {
     }
   }
   return (
-     <div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'>
-        <img src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`} alt={item?.title} className="w-full h-auto block" />
-          <div className='absolute top-0 left-0 w-full h-full hover:opacity-100 hover:bg-black/80 opacity-0 text-white'>
-             <p className='whitespace-normal text-xs md:text-sm font-bold  flex justify-center items-center h-full text-center'>{item.title}</p>
-              <p onClick={saveShow}>{like ? < BsHeart className='absolute top-4 left-4'/> : < BsHeartFill className='absolute top-4 left-4'/> }</p>
-            </div> 
+<div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2 group'>
+  <img
+    src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
+    alt={item?.title}
+    className="w-full h-auto block"
+  />
+  <div className='absolute top-0 left-0 w-full h-full group-hover:opacity-100 group-hover:bg-black/80 opacity-0 text-white'>
+    <div className='absolute group top-4 left-4 flext gap-4'>
+      <p onClick={saveShow} className=''>
+        {like ? (
+          <BsHeart className='text-red-500' />
+        ) : (
+          <BsHeartFill className='text-red-500' />
+        )}
+      </p>
+  <div className='opacity-0 absolute top-0 left-0 bg-white text-black text-xs py-1 px-2 rounded mt-2 pointer-events-none invisible group-hover:visible'>
+        click to save your favorite show
       </div>
+    </div>
+    <p className='whitespace-normal text-xs md:text-sm font-bold text-center absolute bottom-4 left-4'>
+      {item.title}
+    </p>
+  </div>
+</div>
+
   )
 }
 

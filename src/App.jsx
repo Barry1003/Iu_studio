@@ -9,8 +9,8 @@ import SignUp from './pages/SignUp'
 import Account from './pages/Account'
 import ProtectedRoute from './components/ProtectedRoute';
 
-
 const App = () => {
+ 
   return (
     <>
     <AuthContextProvider>
