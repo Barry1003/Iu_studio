@@ -36,7 +36,7 @@ const Nav = () => {
       </Link>
 
       {user?.email ? (
-        <div className="flex flex-row items-end">
+        <div className="flex sm:flex-row items-center justify-end gap-4 flex-col sm:items-end">
           <Link to="/account">
             <button
               className="text-white pr-4 flex flex-col text-center items-center gap-1"
